@@ -1,17 +1,12 @@
 import tkinter as tk
-
-# ------------------ Main Window ------------------
 root = tk.Tk()
 root.title("Modern Calculator")
 root.geometry("360x500")
 root.resizable(False, False)
 root.configure(bg="#1e1e1e")
-
-# ------------------ Display ------------------
 display = tk.Entry(root, font=("Arial", 32), bd=0, bg="#1e1e1e", fg="#FFD700", justify="right")
 display.pack(expand=True, fill="both", padx=10, pady=(20, 10))
 
-# ------------------ Button Click Function ------------------
 def on_click(key):
     if key == "C":
         display.delete(0, tk.END)
@@ -27,8 +22,6 @@ def on_click(key):
             display.insert(0, "Error")
     else:
         display.insert(tk.END, key)
-
-# ------------------ Buttons Layout ------------------
 buttons = [
     ["C", "⌫", "%", "÷"],
     ["7", "8", "9", "×"],
@@ -36,8 +29,6 @@ buttons = [
     ["1", "2", "3", "+"],
     ["0", ".", "="]
 ]
-
-# ------------------ Create Buttons ------------------
 for i, row in enumerate(buttons):
     frame = tk.Frame(root, bg="#1e1e1e")
     frame.pack(expand=True, fill="both", padx=10, pady=5)
@@ -62,3 +53,4 @@ for i, row in enumerate(buttons):
 
 # ------------------ Run App ------------------
 root.mainloop()
+
